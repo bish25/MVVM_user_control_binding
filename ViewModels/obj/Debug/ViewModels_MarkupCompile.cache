@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-c:\users\sam\documents\visual studio 2017\Projects\ViewModels\ViewModels\obj\Debug\
+C:\Users\Sam\Downloads\MVVM_user_control_binding-master\MVVM_user_control_binding-master\ViewModels\obj\Debug\
 ViewModels
 none
 false
 DEBUG;TRACE
-c:\users\sam\documents\visual studio 2017\Projects\ViewModels\ViewModels\App.xaml
-3357570136
+C:\Users\Sam\Downloads\MVVM_user_control_binding-master\MVVM_user_control_binding-master\ViewModels\App.xaml
+5-1678913054
 
-141085940225
+161756065816
 13738642453
-MainWindow.xaml;View\Customers.xaml;View\CustomerSettings.xaml;
+MainWindow.xaml;View\Customers.xaml;View\CustomerSettings.xaml;View\Suppliers.xaml;View\SupplierSettings.xaml;
 
 False
 

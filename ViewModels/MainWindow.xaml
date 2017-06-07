@@ -7,21 +7,29 @@
         xmlns:VM="clr-namespace:ViewModels.ViewModel"
         xmlns:View="clr-namespace:ViewModels.View"
         mc:Ignorable="d"
-        Title="MainWindow" Height="452.542" Width="862.219">
+        Title="MainWindow" Height="592.372" Width="863.49">
     <Window.DataContext>
         <VM:MainVM></VM:MainVM>
     </Window.DataContext>
 
     <Window.Resources>
-        <DataTemplate  DataType="{x:Type VM:CustomerVM}">
+        <DataTemplate  DataType="{x:Type VM:CustomersVM}">
             <View:Customers/>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type VM:CustomerSettingsVM}">
-            <View:CustomerSettings />
+
+        <DataTemplate  DataType="{x:Type VM:SuppliersVM}">
+            <View:Suppliers/>
         </DataTemplate>
+
     </Window.Resources>
     <Grid>
-        <ContentControl Content="{Binding SelectedMain}"  Margin="0,53,296,10" />
-        <ContentControl  Content="{Binding SelectedSettings}"  Margin="563,53,10,45"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="62*"/>
+            <ColumnDefinition Width="33*"/>
+        </Grid.ColumnDefinitions>
+        <ContentControl Content="{Binding SelectedMain}"  Margin="0,53,296,10" Grid.ColumnSpan="2" />
+        <ContentControl Content="{Binding SettingsControl}"  Margin="5.136,53,10,22" Grid.Column="1"/>
+        <Button Content="Customers" Command="{Binding NavigationCommand}" CommandParameter="0" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Suppliers" Command="{Binding NavigationCommand}" CommandParameter="1" HorizontalAlignment="Left" Margin="90,10,0,0" VerticalAlignment="Top" Width="75"/>
     </Grid>
 </Window>

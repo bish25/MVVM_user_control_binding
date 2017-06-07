@@ -55,16 +55,22 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Factory\DatabaseMaster.cs" />
-    <Compile Include="ViewModel\CustomerSettingsVM.cs" />
-    <Compile Include="ViewModel\CustomerVM.cs" />
+    <Compile Include="ViewModel\CustomersVM.cs" />
     <Compile Include="ViewModel\DelegateCommand.cs" />
     <Compile Include="ViewModel\MainVM.cs" />
     <Compile Include="ViewModel\ObservableObject.cs" />
+    <Compile Include="ViewModel\SuppliersVM.cs" />
     <Compile Include="View\Customers.xaml.cs">
       <DependentUpon>Customers.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\CustomerSettings.xaml.cs">
       <DependentUpon>CustomerSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Suppliers.xaml.cs">
+      <DependentUpon>Suppliers.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SupplierSettings.xaml.cs">
+      <DependentUpon>SupplierSettings.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -83,6 +89,14 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\CustomerSettings.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Suppliers.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\SupplierSettings.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

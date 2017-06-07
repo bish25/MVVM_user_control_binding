@@ -6,39 +6,55 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Data.Common;
 using System.ComponentModel;
+using System.Windows.Controls;
+using ViewModels.View;
 
 namespace ViewModels.ViewModel
 {
     class MainVM : ObservableObject
     {
         private readonly string _title = "CUSTOMERS";
-        private  CustomerVM _customerVM;
-        private CustomerSettingsVM _customerSettingsVM;
-     
+        private  CustomersVM _customerVM;
+        private SuppliersVM _supplierVM;
+        private UserControl _content;
 
         public string Title { get { return _title; } }
         
 
         public MainVM()
         {
-            Customer = new CustomerVM();
-            CustomerSettings = new CustomerSettingsVM();
+            Customer = new CustomersVM();
+            Supplier = new SuppliersVM();
             SelectedMain = Customer;
-            SelectedSettings = CustomerSettings;
+            _content = new CustomerSettings();
+            _content.DataContext = Customer;
+            SettingsControl = _content;
+            
         }
 
-        public CustomerVM Customer
+        public CustomersVM Customer
         {
             get { return _customerVM; }
             private set { _customerVM = value; }
         }
-        public CustomerSettingsVM CustomerSettings
+
+        public SuppliersVM Supplier
         {
-            get { return _customerSettingsVM; }
-            private set { _customerSettingsVM = value; }
+            get { return _supplierVM; }
+            private set { _supplierVM = value; }
         }
 
-    
+        public UserControl SettingsControl
+        {
+            get { return _content; }
+            set
+            {
+                _content = value;
+                RaisePropertyChangedEvent("SettingsControl");
+            }
+        }
+
+
 
         public INotifyPropertyChanged _selectedMain;
         public INotifyPropertyChanged SelectedMain
@@ -78,10 +94,15 @@ namespace ViewModels.ViewModel
             {
                 case "0":
                     SelectedMain = Customer;
-                    SelectedSettings = Customer;
+                    _content = new CustomerSettings();
+                    _content.DataContext = Customer;
+                    SettingsControl = _content;
                     break;
                 case "1":
-                   
+                    SelectedMain = Supplier;
+                    _content = new SupplierSettings();
+                    _content.DataContext = Supplier;
+                    SettingsControl = _content;
                     break;
             }
             
